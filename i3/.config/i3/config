@@ -187,3 +187,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# i3 gaps
+gaps inner 10
+gaps outer 10
