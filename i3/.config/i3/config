@@ -30,7 +30,7 @@ exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 # Set wallpaper
-exec_always feh --bg-scale ~/.config/backgrounds/sea_rocks_blue.jpg
+exec_always feh --bg-fill ~/.config/backgrounds/mountains_ski_gray.jpg
 
 # Redshift
 exec --no-startup-id redshift -l 53.551086:9.993682 -t 6500K:3500K
