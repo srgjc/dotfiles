@@ -199,4 +199,8 @@ bindsym $mod+r mode "resize"
 
 # i3 gaps
 gaps inner 5
-gaps outer 5
+
+# Border colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #54635c #54635c #ffffff #54635c   #54635c
+
