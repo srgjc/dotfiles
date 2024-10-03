@@ -33,7 +33,7 @@ exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always feh --bg-fill ~/.config/backgrounds/mountains_ski_gray.jpg
 
 # Redshift
-exec --no-startup-id redshift -l 53.551086:9.993682 -t 6500K:3500K
+exec --no-startup-id redshift -l 53.551086:9.993682 -t 6500K:3500K -b 1.0:0.8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
