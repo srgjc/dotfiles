@@ -171,3 +171,8 @@ on-mode-changed = []
     alt-shift-j = ['join-with down', 'mode main']
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
+
+# Per app floating window rules
+[[on-window-detected]]
+if.app-id = "com.apple.finder"
+run = "layout floating"
