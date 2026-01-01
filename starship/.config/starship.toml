@@ -1,0 +1,69 @@
+# Insert a blank line between shell prompts
+add_newline = true
+
+# Increase the default command timeout to 2 seconds
+command_timeout = 2000
+
+# Define the order and format of the information in our prompt
+format = """\
+[](fg:blue)\
+$directory\
+${custom.directory_separator_not_git}\
+${custom.directory_separator_git}\
+$symbol($git_branch[](fg:purple))\
+$symbol( $git_commit$git_status$git_metrics$git_state)$fill$cmd_duration$all$conda\
+$character"""
+
+# Fill character (empty space) between the left and right prompt
+[fill]
+symbol = " "
+
+# Disable the line break between the first and second prompt lines
+[line_break]
+disabled = true
+
+[conda]
+format = "[ ($environment) \n](fg:black bg:green)"
+ignore_base = false
+
+# Customize the format of the working directory
+[directory]
+truncate_to_repo = true
+format = "[ $path ]($style)"
+style = "fg:black bg:blue"
+
+[git_branch]
+symbol = " "
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+style = "fg:black bg:purple"
+
+[git_metrics]
+disabled = false
+
+[package]
+disabled = true # Enable to output the current working directory's package version
+format = "[$symbol$version]($style) "
+display_private = true
+
+# Output the command duration if over 2 seconds
+[cmd_duration]
+min_time = 2_000
+format = "[  $duration ]($style)"
+style = "white"
+
+# Output a styled separator right after the directory when inside a git repository.
+[custom.directory_separator_git]
+description = "Output a styled separator right after the directory when inside a git repository."
+command = ""
+format = "[](fg:blue bg:purple)"
+# Only when inside git repository
+when = "git rev-parse --is-inside-work-tree >/dev/null 2>&1"
+
+# Output a styled separator right after the directory when NOT inside a git repository.
+[custom.directory_separator_not_git]
+description = "Output a styled separator right after the directory when NOT inside a git repository."
+command = ""
+format = "[](fg:blue)"
+# Only when NOT inside a git repository
+when = "! git rev-parse --is-inside-work-tree > /dev/null 2>&1"
+
