@@ -11,7 +11,7 @@ $directory\
 ${custom.directory_separator_not_git}\
 ${custom.directory_separator_git}\
 $symbol($git_branch[](fg:purple))\
-$symbol( $git_commit$git_status$git_metrics$git_state)$fill$cmd_duration$all$conda\
+$symbol( $git_commit$git_status$git_metrics$git_state)$fill$cmd_duration$all$conda\n\
 $character"""
 
 # Fill character (empty space) between the left and right prompt
@@ -23,8 +23,9 @@ symbol = " "
 disabled = true
 
 [conda]
-format = "[ ($environment) \n](fg:black bg:green)"
-ignore_base = false
+format = "[$symbol(:$environment)]($style)"
+style = "green"
+ignore_base = true
 
 # Customize the format of the working directory
 [directory]
