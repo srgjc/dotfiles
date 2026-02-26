@@ -1,0 +1,24 @@
+# Taps
+tap "nikitabobko/tap"
+
+# Formulae
+brew "stow"
+brew "fish"
+brew "starship"
+brew "mas"
+
+# Casks
+cask "aerospace"
+cask "spotify"
+cask "raycast"
+cask "ghostty"
+cask "obsidian"
+cask "discord"
+cask "notion"
+cask "vlc"
+cask "zed"
+cask "signal"
+cask "whatsapp"
+
+# Mac App Store apps
+mas "GarageBand", id: 682658836
