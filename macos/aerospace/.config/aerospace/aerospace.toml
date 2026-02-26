@@ -65,13 +65,14 @@ on-mode-changed = []
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
-[gaps]
-    inner.horizontal = 14
-    inner.vertical =   14
-    outer.left =       14
-    outer.bottom =     14
-    outer.top =        14
-    outer.right =      14
+
+#[gaps]
+#    inner.horizontal = 14
+#    inner.vertical =   14
+#    outer.left =       14
+#    outer.bottom =     14
+#    outer.top =        14
+#    outer.right =      14
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
