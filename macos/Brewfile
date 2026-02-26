@@ -19,6 +19,9 @@ cask "vlc"
 cask "zed"
 cask "signal"
 cask "whatsapp"
+cask "font-fira-code"
+cask "font-cascadia-code"
+cask "font-jetbrains-mono"
 
 # Mac App Store apps
 mas "GarageBand", id: 682658836
