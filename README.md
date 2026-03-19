@@ -14,3 +14,8 @@ for file in ~/.config/zsh/*.zsh; do
   source "$file"
 done
 ```
+
+Also append the following line for `brew bundle`:
+```
+export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
+```
