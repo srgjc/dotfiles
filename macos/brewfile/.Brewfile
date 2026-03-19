@@ -9,6 +9,7 @@ brew "lazygit"
 brew "maven"
 brew "node"
 brew "openjdk"
+brew "mole"
 
 # Casks
 cask "aerospace"
