@@ -10,6 +10,7 @@ brew "maven"
 brew "node"
 brew "openjdk"
 brew "mole"
+brew "fastfetch"
 
 # Casks
 cask "nikitabobko/tap/aerospace"
@@ -22,7 +23,6 @@ cask "vlc"
 cask "zed"
 cask "signal"
 cask "whatsapp"
-cask "font-jetbrains-mono"
 cask "intellij-idea"
 cask "firefox"
 
