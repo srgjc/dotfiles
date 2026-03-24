@@ -1,6 +1,3 @@
-# Taps
-tap "nikitabobko/tap"
-
 # Formulae
 brew "stow"
 brew "starship"
@@ -12,7 +9,7 @@ brew "openjdk"
 brew "mole"
 
 # Casks
-cask "aerospace"
+cask "nikitabobko/tap/aerospace"
 cask "spotify"
 cask "raycast"
 cask "ghostty"
@@ -29,9 +26,7 @@ cask "nvidia-geforce-now"
 cask "intellij-idea"
 cask "jellyfin"
 cask "mullvad-vpn"
-cask "notion"
-cask "miniconda"
-cask "zen"
+cask "firefox"
 
 # Mac App Store apps
 mas "GarageBand", id: 682658836
