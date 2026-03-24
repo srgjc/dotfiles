@@ -1,3 +1,6 @@
+# Taps
+tap "nikitabobko/tap"
+
 # Formulae
 brew "stow"
 brew "starship"
@@ -15,17 +18,12 @@ cask "raycast"
 cask "ghostty"
 cask "obsidian"
 cask "discord"
-cask "notion"
 cask "vlc"
 cask "zed"
 cask "signal"
 cask "whatsapp"
-cask "font-lilex-nerd-font"
 cask "font-jetbrains-mono"
-cask "nvidia-geforce-now"
 cask "intellij-idea"
-cask "jellyfin"
-cask "mullvad-vpn"
 cask "firefox"
 
 # Mac App Store apps
