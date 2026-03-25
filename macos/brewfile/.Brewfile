@@ -25,6 +25,7 @@ cask "signal"
 cask "whatsapp"
 cask "intellij-idea"
 cask "firefox"
+cask "docker-desktop"
 
 # Mac App Store apps
 mas "GarageBand", id: 682658836
