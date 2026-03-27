@@ -27,6 +27,7 @@ cask "whatsapp"
 cask "intellij-idea"
 cask "firefox"
 cask "docker-desktop"
+cask "font-jetbrains-mono-nerd-font"
 
 # Mac App Store apps
 mas "GarageBand", id: 682658836
