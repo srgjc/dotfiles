@@ -136,6 +136,12 @@
     neovim
     lshw
     foot
+    signal-desktop
+    obsidian
+    spotify
+    fastfetch
+    xfce.thunar
+    lazygit
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
