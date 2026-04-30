@@ -5,6 +5,17 @@
 { config, lib, pkgs, ... }:
 
 {
+  # Nix Settings
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+  };
+  nix.settings.auto-optimise-store = true;
+  system.autoUpgrade = {
+    enable = true;
+    dates = "monthly";
+  };
+
   # Enable OpenGL
   hardware.graphics.enable = true;
 
@@ -20,6 +31,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     prime = {
       sync.enable = true;
+      # sudo lshw -c display to find PCI Bus IDs (convert to decimal)
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
@@ -74,7 +86,7 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
-    variant = "";
+    variant = "intl";
   };
 
   # Enable CUPS to print documents.
