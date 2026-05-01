@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, system,... }:
 
 {
   # Nix Settings
@@ -25,6 +25,21 @@
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
+  programs.dank-material-shell = {
+    enable = true;
+    enableSystemMonitoring = true;
+    dgop.package = inputs.dgop.packages.${system}.default;
+    systemd = {
+      enable = true;
+      restartIfChanged = true;
+    };
+    greeter = {
+      enable = true;
+      compositor.name = "hyprland";
+    };
+  };
+  programs.hyprland.enable = true;
+
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
@@ -42,8 +57,10 @@
 
 
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
+      inputs.dms.nixosModules.dank-material-shell
+      inputs.dms.nixosModules.greeter
     ];
 
   # Bootloader.
@@ -82,10 +99,6 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -119,10 +132,6 @@
     isNormalUser = true;
     description = "Sergio Jimenez";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
   };
 
   # Programs Options
@@ -157,6 +166,7 @@
     fastfetch
     xfce.thunar
     lazygit
+    fuzzel
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
