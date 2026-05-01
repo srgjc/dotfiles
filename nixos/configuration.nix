@@ -10,7 +10,10 @@
     automatic = true;
     dates = "weekly";
   };
-  nix.settings.auto-optimise-store = true;
+  nix.settings = {
+    auto-optimise-store = true;
+    experimental-features = [ "nix-command" "flakes" ];
+  };
   system.autoUpgrade = {
     enable = true;
     dates = "monthly";
