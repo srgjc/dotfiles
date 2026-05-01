@@ -19,6 +19,8 @@
     dates = "monthly";
   };
 
+  hardware.enableAllFirmware = true;
+
   # Enable OpenGL
   hardware.graphics.enable = true;
 
