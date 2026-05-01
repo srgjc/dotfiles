@@ -25,6 +25,8 @@
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
+  services.upower.enable = true;
+
   programs.dank-material-shell = {
     enable = true;
     enableSystemMonitoring = true;
