@@ -27,6 +27,8 @@
 
   services.upower.enable = true;
 
+  hardware.bluetooth.enable = true;
+
   programs.dank-material-shell = {
     enable = true;
     enableSystemMonitoring = true;
