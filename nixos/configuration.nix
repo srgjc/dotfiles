@@ -179,7 +179,13 @@
     xfce.thunar
     lazygit
     fuzzel
+    bibata-cursors
   ];
+
+  environment.variables = {
+    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_SIZE = "24";
+  };
   
   fonts = {
     enableDefaultPackages = true;
