@@ -180,6 +180,7 @@
     lazygit
     fuzzel
     bibata-cursors
+    zed-editor
   ];
 
   environment.variables = {
