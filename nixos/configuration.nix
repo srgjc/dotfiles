@@ -149,6 +149,13 @@
 	safe.directory = "/etc/nixos";
       };
     };
+    foot = {
+      enable = true;
+      theme = "gruvbox-dark";
+      settings = {
+        main.font = " JetBrainsMono Nerd Font:size=12";
+      };
+    };
   };
 
   # Allow unfree packages
@@ -159,7 +166,6 @@
   environment.systemPackages = with pkgs; [
     neovim
     lshw
-    foot
     signal-desktop
     obsidian
     spotify
@@ -168,6 +174,14 @@
     lazygit
     fuzzel
   ];
+  
+  fonts = {
+    enableDefaultPackages = true;
+    fontconfig.enable = true;
+    packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
