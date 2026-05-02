@@ -29,6 +29,11 @@
     openFirewall = true;
   };
 
+  services.jellyfin = {
+    enable = true; # Port 8096
+    openFirewall = true;
+  };
+
   # Hardware Settings
   hardware = {
     enableAllFirmware = true;
