@@ -198,6 +198,7 @@
     zed-editor
     qbittorrent
     mullvad-vpn
+    vlc
   ];
 
   environment.variables = {
