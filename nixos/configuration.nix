@@ -19,17 +19,20 @@
     dates = "monthly";
   };
 
-  hardware.enableAllFirmware = true;
-
-  # Enable OpenGL
-  hardware.graphics.enable = true;
-
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
   services.upower.enable = true;
 
-  hardware.bluetooth.enable = true;
+  # Hardware Settings
+  hardware = {
+    enableAllFirmware = true;
+    graphics.enable = true; # Enable OpenGL
+    bluetooth = {
+      enable = true;
+      powerOnBoot = false;
+    };
+  };
 
   programs.dank-material-shell = {
     enable = true;
