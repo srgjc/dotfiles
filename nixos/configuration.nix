@@ -36,7 +36,7 @@
     enableSystemMonitoring = true;
     dgop.package = inputs.dgop.packages.${system}.default;
     systemd = {
-      enable = true;
+      enable = false; # Bugged. Starting from hyprland instead.
       restartIfChanged = true;
     };
     greeter = {
