@@ -120,6 +120,7 @@
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.mullvad-vpn.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -190,6 +191,8 @@
     fuzzel
     bibata-cursors
     zed-editor
+    qbittorrent
+    mullvad-vpn
   ];
 
   environment.variables = {
