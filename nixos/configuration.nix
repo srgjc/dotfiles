@@ -24,6 +24,11 @@
 
   services.upower.enable = true;
 
+  services.qbittorrent = {
+    enable = true;
+    openFirewall = true;
+  };
+
   # Hardware Settings
   hardware = {
     enableAllFirmware = true;
