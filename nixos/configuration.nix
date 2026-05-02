@@ -165,6 +165,7 @@
         main.font = " JetBrainsMono Nerd Font:size=12";
       };
     };
+    starship.enable = true;
   };
 
   # Allow unfree packages
