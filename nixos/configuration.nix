@@ -166,6 +166,11 @@
       };
     };
     starship.enable = true;
+    bash.shellAliases = {
+      ll = "ls -lh";
+      la = "ll -A";
+      lg = "lazygit";
+    };
   };
 
   # Allow unfree packages
