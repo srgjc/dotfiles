@@ -21,10 +21,6 @@
 
 
   services = {
-    qbittorrent = {
-      enable = true;
-      openFirewall = true;
-    };
     jellyfin = {
       enable = true; # Port 8096
       openFirewall = true;
@@ -217,6 +213,16 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  networking.firewall = {
+    enable = true;
+
+    allowedTCPPorts = [
+      16720 # qbittorrent
+    ];
+    allowedUDPPorts = [
+      16720
+    ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
