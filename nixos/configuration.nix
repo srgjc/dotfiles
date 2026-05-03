@@ -61,20 +61,6 @@
     };
   };
 
-  programs.dank-material-shell = {
-    enable = true;
-    enableSystemMonitoring = true;
-    dgop.package = inputs.dgop.packages.${system}.default;
-    systemd = {
-      enable = false; # Bugged. Starting from hyprland instead.
-      restartIfChanged = true;
-    };
-    greeter = {
-      enable = true;
-      compositor.name = "hyprland";
-    };
-  };
-  programs.hyprland.enable = true;
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -168,6 +154,27 @@
       la = "ll -A";
       lg = "lazygit";
     };
+    dank-material-shell = {
+      enable = true;
+      enableSystemMonitoring = true;
+      dgop.package = inputs.dgop.packages.${system}.default;
+      systemd = {
+        enable = false; # Bugged. Starting from hyprland instead.
+        restartIfChanged = true;
+      };
+      greeter = {
+        enable = true;
+        compositor.name = "hyprland";
+      };
+    };
+    hyprland.enable = true;
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    # mtr.enable = true;
+    # gnupg.agent = {
+    #   enable = true;
+    #   enableSSHSupport = true;
+    # };
   };
 
   # Allow unfree packages
@@ -204,14 +211,6 @@
       nerd-fonts.jetbrains-mono
     ];
   };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
