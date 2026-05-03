@@ -21,10 +21,6 @@
 
 
   services = {
-    jellyfin = {
-      enable = true; # Port 8096
-      openFirewall = true;
-    };
     xserver.videoDrivers = ["nvidia"]; # Load nvidia driver for Xorg and Wayland
     upower.enable = true;
     xserver.enable = true; # Enable the X11 windowing system.
@@ -193,6 +189,7 @@
     qbittorrent
     mullvad-vpn
     vlc
+    jellyfin
   ];
 
   environment.variables = {
@@ -218,9 +215,11 @@
 
     allowedTCPPorts = [
       16720 # qbittorrent
+      8096 # jellyfin
     ];
     allowedUDPPorts = [
       16720
+      8096
     ];
   };
 
