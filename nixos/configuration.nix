@@ -133,7 +133,7 @@
       enable = true;
       theme = "gruvbox-dark";
       settings = {
-        main.font = " JetBrainsMono Nerd Font:size=12";
+        main.font = " JetBrainsMono Nerd Font:size=11";
       };
     };
     starship.enable = true;
