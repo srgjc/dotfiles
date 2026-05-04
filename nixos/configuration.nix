@@ -9,16 +9,12 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
+    options = "--delete-older-than 7d";
   };
   nix.settings = {
     auto-optimise-store = true;
     experimental-features = [ "nix-command" "flakes" ];
   };
-  system.autoUpgrade = {
-    enable = true;
-    dates = "monthly";
-  };
-
 
   services = {
     xserver.videoDrivers = ["nvidia"]; # Load nvidia driver for Xorg and Wayland
@@ -190,6 +186,7 @@
     mullvad-vpn
     vlc
     jellyfin
+    jellyfin-desktop
   ];
 
   environment.variables = {
