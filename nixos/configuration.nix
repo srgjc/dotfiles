@@ -187,6 +187,7 @@
     vlc
     jellyfin
     jellyfin-desktop
+    libnotify
   ];
 
   environment.variables = {
