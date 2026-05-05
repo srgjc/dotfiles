@@ -134,7 +134,7 @@
       enable = true;
       theme = "onehalf-dark";
       settings = {
-        main.font = " JetBrainsMono Nerd Font:size=11";
+        main.font = " JetBrainsMono Nerd Font:size=10";
       };
     };
     starship.enable = true;
