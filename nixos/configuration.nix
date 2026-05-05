@@ -132,7 +132,7 @@
     };
     foot = {
       enable = true;
-      theme = "gruvbox-dark";
+      theme = "onehalf-dark";
       settings = {
         main.font = " JetBrainsMono Nerd Font:size=11";
       };
