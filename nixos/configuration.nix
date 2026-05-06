@@ -35,6 +35,8 @@
       #jack.enable = true; If you want to use JACK applications, uncomment this
       #media-session.enable = true; Default for now
     };
+    displayManager.sddm.enable = true;
+    displayManager.sddm.wayland.enable = true;
     # openssh.enable = true; Enable the OpenSSH daemon.
     # xserver.libinput.enable = true; Enable touchpad support (enabled default in most desktopManager).
   };
@@ -48,7 +50,6 @@
       powerOnBoot = false;
     };
   };
-
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -69,8 +70,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      inputs.dms.nixosModules.dank-material-shell
-      inputs.dms.nixosModules.greeter
     ];
 
   # Bootloader.
@@ -143,19 +142,6 @@
       la = "ll -A";
       lg = "lazygit";
     };
-    dank-material-shell = {
-      enable = true;
-      enableSystemMonitoring = true;
-      dgop.package = inputs.dgop.packages.${system}.default;
-      systemd = {
-        enable = false; # Bugged. Starting from hyprland instead.
-        restartIfChanged = true;
-      };
-      greeter = {
-        enable = true;
-        compositor.name = "hyprland";
-      };
-    };
     hyprland.enable = true;
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
@@ -191,6 +177,11 @@
     libnotify
     impala
     bluetui
+    waybar
+    mako
+    wl-clipboard
+    pulsemixer
+    hyprsunset
   ];
 
   environment.variables = {
