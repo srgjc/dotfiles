@@ -1,0 +1,9 @@
+default-timeout=5000
+
+border-size=3
+border-radius=1
+text-color=#cdd6f4
+border-color=#313244
+padding=10
+margin=6
+background-color=#1e1e2ee6
