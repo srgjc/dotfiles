@@ -10,7 +10,7 @@
   ],
 
   "modules-center": [
-    "clock"
+    "custom/clock"
   ],
 
   "modules-right": [
@@ -39,8 +39,9 @@
     "format": "󰍛"
   },
 
-  "clock": {
-    "format": "{:%a %d %H:%M}",
+  "custom/clock": {
+    "exec": "date '+%a. %-d. %H:%M'",
+    "interval": 5,
     "tooltip": false
   },
 
