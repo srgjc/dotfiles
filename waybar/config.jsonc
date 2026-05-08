@@ -6,6 +6,7 @@
   "spacing": 0,
 
   "modules-left": [
+    "custom/nixos",
     "hyprland/workspaces"
   ],
 
@@ -21,6 +22,11 @@
     "cpu",
     "battery"
   ],
+
+  "custom/nixos": {
+    "format": " ",
+    "tooltip-format": "NixOS"
+  },
 
   "hyprland/workspaces": {
     "format": "{name}",
