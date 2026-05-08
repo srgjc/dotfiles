@@ -12,13 +12,13 @@ fi
 
 if [ "$INTERNAL_ACTIVE" -eq 1 ]; then
     if [ "$ENABLED_MONITORS" -le 1 ]; then
-        notify-send "Display Toggle" "Cannot disable only display"
+        notify-send -u low "Display Toggle" "󰍹   Cannot disable the only display"
         exit 1
     else
         hyprctl keyword monitor "$INTERNAL,disable"
-        notify-send "Display Toggle" "Internal display disabled"
+        notify-send -u low "Display Toggle" "󰍹   Laptop display disabled"
     fi
 else
     hyprctl keyword monitor "$INTERNAL,preferred,auto,auto"
-    notify-send "Display Toggle" "Internal display enabled"
+    notify-send -u low "Display Toggle" "󰍹   Laptop display enabled"
 fi
