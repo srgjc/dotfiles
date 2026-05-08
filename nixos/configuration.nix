@@ -170,6 +170,7 @@
     wl-clipboard
     pulsemixer
     hyprsunset
+    brightnessctl
   ];
 
   environment.variables = {
