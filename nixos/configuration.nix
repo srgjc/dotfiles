@@ -21,8 +21,14 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember-session --sessions ${pkgs.hyprland}/share/wayland-sessions";
-          user = "greeter";
+          command = ''
+	    ${pkgs.tuigreet}/bin/tuigreet \
+	      --time \
+	      --remember \
+	      --remember-session \
+	      --sessions ${pkgs.hyprland}/share/wayland-sessions
+          '';
+	  user = "greeter";
         };
       };
     };
