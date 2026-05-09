@@ -178,7 +178,6 @@
     obsidian
     spotify
     fastfetch
-    xfce.thunar
     lazygit
     fuzzel
     bibata-cursors
@@ -197,6 +196,8 @@
     pulsemixer
     hyprsunset
     brightnessctl
+    swaybg
+    kdePackages.dolphin
   ];
 
   environment.variables = {
