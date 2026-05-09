@@ -205,6 +205,7 @@
     brightnessctl
     swaybg
     kdePackages.dolphin
+    anki
   ];
 
   environment.variables = {
