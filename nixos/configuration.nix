@@ -17,6 +17,15 @@
   };
 
   services = {
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember-session --sessions ${pkgs.hyprland}/share/wayland-sessions";
+          user = "greeter";
+        };
+      };
+    };
     xserver.videoDrivers = ["nvidia"]; # Load nvidia driver for Xorg and Wayland
     upower.enable = true;
     xserver.enable = true; # Enable the X11 windowing system.
@@ -35,8 +44,6 @@
       #jack.enable = true; If you want to use JACK applications, uncomment this
       #media-session.enable = true; Default for now
     };
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
     # openssh.enable = true; Enable the OpenSSH daemon.
     # xserver.libinput.enable = true; Enable touchpad support (enabled default in most desktopManager).
   };
@@ -75,6 +82,21 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # this is a life saver.
+  # literally no documentation about this anywhere.
+  # might be good to write about this...
+  # https://www.reddit.com/r/NixOS/comments/u0cdpi/tuigreet_with_xmonad_how/
+  systemd.services.greetd.serviceConfig = {
+    Type = "idle";
+    StandardInput = "tty";
+    StandardOutput = "tty";
+    StandardError = "journal"; # Without this errors will spam on screen
+    # Without these bootlogs will spam on screen
+    TTYReset = true;
+    TTYVHangup = true;
+    TTYVTDisallocate = true;
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -130,7 +152,11 @@
       la = "ll -A";
       lg = "lazygit";
     };
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+    };
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # mtr.enable = true;
