@@ -25,6 +25,7 @@
 	    ${pkgs.tuigreet}/bin/tuigreet \
 	      --time \
 	      --remember \
+	      --theme border=cyan; \
 	      --remember-session \
 	      --sessions ${pkgs.hyprland}/share/wayland-sessions
           '';
