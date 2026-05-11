@@ -206,6 +206,8 @@
     swaybg
     kdePackages.dolphin
     anki
+    hyprlock
+    hypridle
   ];
 
   environment.variables = {
