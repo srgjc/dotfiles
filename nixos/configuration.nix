@@ -149,16 +149,21 @@
     foot = {
       enable = true;
       theme = "onehalf-dark";
+      enableFishIntegration = true;
       settings = {
-        main.font = " JetBrainsMono Nerd Font:size=10";
+        main = {
+          font = "JetBrainsMono Nerd Font:size=10";
+          shell = "fish";
+        };
+      };
+    };
+    fish = {
+      enable = true;
+      shellAliases = {
+        lg = "lazygit";
       };
     };
     starship.enable = true;
-    bash.shellAliases = {
-      ll = "ls -lh";
-      la = "ll -A";
-      lg = "lazygit";
-    };
     hyprland = {
       enable = true;
       withUWSM = true;
@@ -209,6 +214,7 @@
     hyprlock
     hypridle
   ];
+
 
   environment.variables = {
     XCURSOR_THEME = "Bibata-Modern-Ice";
