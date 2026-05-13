@@ -2,7 +2,7 @@
   description = "My NixOS system";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
   };
 
   outputs = { nixpkgs, ... } @ inputs : let system = "x86_64-linux"; in {
