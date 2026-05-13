@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-~/.config/hypr/scripts/brightness-display on
-~/.config/hypr/scripts/brightness-keyboard restore

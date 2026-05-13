@@ -17,22 +17,9 @@
   };
 
   services = {
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = ''
-	    ${pkgs.tuigreet}/bin/tuigreet \
-	      --time \
-	      --remember \
-	      --theme border=cyan; \
-	      --remember-session \
-	      --sessions ${pkgs.hyprland}/share/wayland-sessions
-          '';
-	  user = "greeter";
-        };
-      };
-    };
+    desktopManager.cosmic.enable = true;
+    displayManager.cosmic-greeter.enable = true;
+    desktopManager.cosmic.xwayland.enable = true;
     xserver.videoDrivers = ["nvidia"]; # Load nvidia driver for Xorg and Wayland
     upower.enable = true;
     xserver.enable = true; # Enable the X11 windowing system.
@@ -90,21 +77,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # this is a life saver.
-  # literally no documentation about this anywhere.
-  # might be good to write about this...
-  # https://www.reddit.com/r/NixOS/comments/u0cdpi/tuigreet_with_xmonad_how/
-  systemd.services.greetd.serviceConfig = {
-    Type = "idle";
-    StandardInput = "tty";
-    StandardOutput = "tty";
-    StandardError = "journal"; # Without this errors will spam on screen
-    # Without these bootlogs will spam on screen
-    TTYReset = true;
-    TTYVHangup = true;
-    TTYVTDisallocate = true;
-  };
-
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -114,7 +86,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.backend = "iwd";
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -164,11 +135,6 @@
       };
     };
     starship.enable = true;
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-      xwayland.enable = true;
-    };
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # mtr.enable = true;
@@ -191,7 +157,6 @@
     spotify
     fastfetch
     lazygit
-    fuzzel
     bibata-cursors
     zed-editor
     qbittorrent
@@ -199,22 +164,8 @@
     vlc
     jellyfin
     jellyfin-desktop
-    libnotify
-    impala
-    bluetui
-    waybar
-    mako
-    wl-clipboard
-    pulsemixer
-    hyprsunset
-    brightnessctl
-    swaybg
-    kdePackages.dolphin
     anki
-    hyprlock
-    hypridle
   ];
-
 
   environment.variables = {
     XCURSOR_THEME = "Bibata-Modern-Ice";
