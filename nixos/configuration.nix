@@ -17,9 +17,6 @@
   };
 
   services = {
-    desktopManager.cosmic.enable = true;
-    displayManager.cosmic-greeter.enable = true;
-    desktopManager.cosmic.xwayland.enable = true;
     xserver.videoDrivers = ["nvidia"]; # Load nvidia driver for Xorg and Wayland
     upower.enable = true;
     xserver.enable = true; # Enable the X11 windowing system.
@@ -40,6 +37,10 @@
     };
     # openssh.enable = true; Enable the OpenSSH daemon.
     # xserver.libinput.enable = true; Enable touchpad support (enabled default in most desktopManager).
+    displayManager.dms-greeter = {
+     enable = true;
+     compositor.name = "hyprland";
+    };
   };
 
   # Hardware Settings
@@ -117,12 +118,30 @@
 	safe.directory = "/etc/nixos";
       };
     };
+    foot = {
+      enable = true;
+      theme = "gruvbox-dark";
+      settings = {
+        main.font = "JetBrainsMono Nerd Font:size=11";
+      };
+    };
     bash.shellAliases = {
       ll = "ls -lh";
       la = "ll -A";
       lg = "lazygit";
     };
     starship.enable = true;
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
+    dms-shell = {
+      enable = true;
+      systemd = {
+        enable = true;
+	restartIfChanged = true;
+      };
+    };
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # mtr.enable = true;
@@ -154,6 +173,8 @@
     jellyfin-desktop
     anki
     fuzzel
+    libnotify
+    kdePackages.dolphin
   ];
 
   environment.variables = {
