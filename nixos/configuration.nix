@@ -117,22 +117,10 @@
 	safe.directory = "/etc/nixos";
       };
     };
-    foot = {
-      enable = true;
-      theme = "onehalf-dark";
-      enableFishIntegration = true;
-      settings = {
-        main = {
-          font = "JetBrainsMono Nerd Font:size=10";
-          shell = "fish";
-        };
-      };
-    };
-    fish = {
-      enable = true;
-      shellAliases = {
-        lg = "lazygit";
-      };
+    bash.shellAliases = {
+      ll = "ls -lh";
+      la = "ll -A";
+      lg = "lazygit";
     };
     starship.enable = true;
     # Some programs need SUID wrappers, can be configured further or are
