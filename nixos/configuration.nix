@@ -165,6 +165,7 @@
     jellyfin
     jellyfin-desktop
     anki
+    fuzzel
   ];
 
   environment.variables = {
