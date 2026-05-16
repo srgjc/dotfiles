@@ -175,6 +175,8 @@
     fuzzel
     libnotify
     kdePackages.dolphin
+    brightnessctl
+    playerctl
   ];
 
   environment.variables = {
