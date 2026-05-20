@@ -37,10 +37,8 @@
     };
     # openssh.enable = true; Enable the OpenSSH daemon.
     # xserver.libinput.enable = true; Enable touchpad support (enabled default in most desktopManager).
-    displayManager.dms-greeter = {
-     enable = true;
-     compositor.name = "hyprland";
-    };
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
   };
 
   # Hardware Settings
@@ -131,17 +129,6 @@
       lg = "lazygit";
     };
     starship.enable = true;
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-    };
-    dms-shell = {
-      enable = true;
-      systemd = {
-        enable = true;
-	restartIfChanged = true;
-      };
-    };
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # mtr.enable = true;
@@ -173,10 +160,6 @@
     jellyfin-desktop
     anki
     fuzzel
-    libnotify
-    kdePackages.dolphin
-    brightnessctl
-    playerctl
   ];
 
   environment.variables = {
