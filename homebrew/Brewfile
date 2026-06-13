@@ -1,0 +1,33 @@
+# Taps
+tap "nikitabobko/tap"
+
+# Formulae
+brew "starship"
+brew "mas"
+brew "lazygit"
+brew "lazydocker"
+brew "maven"
+brew "node@24"
+brew "openjdk@21"
+brew "mole"
+brew "fastfetch"
+
+# Casks
+cask "nikitabobko/tap/aerospace"
+cask "spotify"
+cask "raycast"
+cask "ghostty"
+cask "obsidian"
+cask "discord"
+cask "vlc"
+cask "zed"
+cask "signal"
+cask "whatsapp"
+cask "intellij-idea"
+cask "zen"
+cask "docker-desktop"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-lilex"
+
+# Mac App Store apps
+mas "GarageBand", id: 682658836

@@ -1,3 +1,3 @@
-# NixOS Dotfiles
+# MacOS Dotfiles
 
-My NixOS system configuration.
+My MacOS system configuration.
