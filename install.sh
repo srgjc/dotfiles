@@ -21,6 +21,7 @@ HOME_FILES=(
   "vimrc"
   "zshrc"
   "gitconfig"
+  "homebrew"
 )
 
 link_item() {
