@@ -1,0 +1,20 @@
+" --- basics ---
+syntax on
+filetype plugin indent on
+
+" --- UI improvements ---
+set number              " show line numbers
+set relativenumber      " relative line numbers (nice for movement)
+
+" --- editing behavior ---
+set expandtab           " spaces instead of tabs
+set shiftwidth=2        " indentation width
+set softtabstop=2
+set tabstop=2
+set smartindent         " auto-indent
+
+" --- searching ---
+set ignorecase          " case-insensitive search...
+set smartcase           " ...unless uppercase is used
+set incsearch           " live search as you type
+set hlsearch            " highlight matches
