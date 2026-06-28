@@ -179,6 +179,7 @@
     brightnessctl
     playerctl
     inputs.zen-browser.packages."${pkgs.system}".default
+    dropbox
   ];
 
   environment.variables = {

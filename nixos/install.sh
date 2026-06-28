@@ -11,6 +11,8 @@ mkdir -p "$CONFIG_DIR"
 NIX_FILES=(
   "configuration.nix"
   "flake.nix"
+  "flake.lock"
+  "hardware-configuration.nix"
 )
 
 # Directories from dotfiles/config/ -> ~/.config/
@@ -63,7 +65,7 @@ echo "Linking nix dotfiles..."
 for file in "${NIX_FILES[@]}"; do
   link_item \
     "$DOTFILES_DIR/system/$file" \
-    "$NIXOS_DIR/.$file"
+    "$NIXOS_DIR/$file"
 done
 
 echo
