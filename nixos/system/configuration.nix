@@ -109,6 +109,7 @@
       theme = "gruvbox-dark";
       settings = {
         main.font = "JetBrainsMono Nerd Font:size=11";
+	main.shell = "/run/current-system/sw/bin/zsh";
       };
     };
     bash.shellAliases = {
@@ -164,6 +165,7 @@
     playerctl
     inputs.zen-browser.packages."${pkgs.system}".default
     dropbox
+    zsh
   ];
 
   environment.variables = {
