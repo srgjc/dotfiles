@@ -17,7 +17,7 @@
   };
 
   services = {
-    xserver.videoDrivers = ["nvidia"]; # Load nvidia driver for Xorg and Wayland
+    xserver.videoDrivers = ["modesetting"];
     upower.enable = true;
     xserver.enable = true; # Enable the X11 windowing system.
     xserver.xkb = { # Configure keymap in X11
@@ -52,22 +52,6 @@
       powerOnBoot = false;
     };
   };
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = true;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    prime = {
-      sync.enable = true;
-      # sudo lshw -c display to find PCI Bus IDs (convert to decimal)
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
-  };
-
 
   imports =
     [
