@@ -17,7 +17,7 @@
   };
 
   services = {
-    xserver.videoDrivers = ["modesetting"];
+    xserver.videoDrivers = ["nvidia"];
     upower.enable = true;
     xserver.enable = true; # Enable the X11 windowing system.
     xserver.xkb = { # Configure keymap in X11
@@ -37,10 +37,9 @@
     };
     # openssh.enable = true; Enable the OpenSSH daemon.
     # xserver.libinput.enable = true; Enable touchpad support (enabled default in most desktopManager).
-    displayManager.dms-greeter = {
-     enable = true;
-     compositor.name = "hyprland";
-    };
+    desktopManager.cosmic.enable = true;
+    desktopManager.cosmic.xwayland.enable = true;
+    displayManager.cosmic-greeter.enable = true;
   };
 
   # Hardware Settings
@@ -50,6 +49,21 @@
     bluetooth = {
       enable = true;
       powerOnBoot = false;
+    };
+  };
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    prime = {
+      sync.enable = true;
+      # sudo lshw -c display to find PCI Bus IDs (convert to decimal)
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
     };
   };
 
@@ -118,17 +132,6 @@
       lg = "lazygit";
     };
     starship.enable = true;
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-    };
-    dms-shell = {
-      enable = true;
-      systemd = {
-        enable = true;
-	restartIfChanged = true;
-      };
-    };
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # mtr.enable = true;
@@ -159,10 +162,6 @@
     jellyfin-desktop
     anki
     fuzzel
-    libnotify
-    kdePackages.dolphin
-    brightnessctl
-    playerctl
     inputs.zen-browser.packages."${pkgs.system}".default
     dropbox
     zsh
