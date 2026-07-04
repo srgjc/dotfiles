@@ -17,6 +17,7 @@ NIX_FILES=(
 
 # Directories from dotfiles/config/ -> ~/.config/
 CONFIG_FOLDERS=(
+  "fuzzel"
 )
 
 # Files from dotfiles/home/ -> ~/
