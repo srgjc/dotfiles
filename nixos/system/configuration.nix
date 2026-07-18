@@ -40,6 +40,7 @@
     displayManager.dms-greeter = {
      enable = true;
      compositor.name = "hyprland";
+     configHome = "/home/serj";
     };
   };
 
