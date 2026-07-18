@@ -37,9 +37,10 @@
     };
     # openssh.enable = true; Enable the OpenSSH daemon.
     # xserver.libinput.enable = true; Enable touchpad support (enabled default in most desktopManager).
-    desktopManager.cosmic.enable = true;
-    desktopManager.cosmic.xwayland.enable = true;
-    displayManager.cosmic-greeter.enable = true;
+    displayManager.dms-greeter = {
+     enable = true;
+     compositor.name = "hyprland";
+    };
   };
 
   # Hardware Settings
@@ -139,6 +140,17 @@
     #   enable = true;
     #   enableSSHSupport = true;
     # };
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
+    dms-shell = {
+      enable = true;
+      systemd = {
+        enable = true;
+	restartIfChanged = true;
+      };
+    };
   };
 
   # Allow unfree packages
@@ -165,6 +177,10 @@
     inputs.zen-browser.packages."${pkgs.system}".default
     dropbox
     zsh
+    libnotify
+    kdePackages.dolphin
+    brightnessctl
+    playerctl
   ];
 
   environment.variables = {
