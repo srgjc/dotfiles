@@ -3,10 +3,9 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { nixpkgs, zen-browser, ... } @ inputs : let system = "x86_64-linux"; in {
+  outputs = { nixpkgs, ... } @ inputs : let system = "x86_64-linux"; in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit inputs; inherit system; };
