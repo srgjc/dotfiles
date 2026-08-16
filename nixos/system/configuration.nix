@@ -37,9 +37,11 @@
     };
     # openssh.enable = true; Enable the OpenSSH daemon.
     # xserver.libinput.enable = true; Enable touchpad support (enabled default in most desktopManager).
-    desktopManager.cosmic.enable = true;
-    desktopManager.cosmic.xwayland.enable = true;
-    displayManager.cosmic-greeter.enable = true;
+    displayManager.dms-greeter = {
+      enable = true;
+      compositor.name = "hyprland";
+      configHome = "/home/serj";
+    };
   };
 
   # Hardware Settings
@@ -131,6 +133,17 @@
       lg = "lazygit";
     };
     starship.enable = true;
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
+    dms-shell = {
+      enable = true;
+      systemd = {
+        enable = true;
+        restartIfChanged = true;
+      };
+    };
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # mtr.enable = true;
@@ -164,6 +177,11 @@
     brave
     dropbox
     zsh
+    libnotify
+    brightnessctl
+    playerctl
+    nautilus
+    alacritty
   ];
 
   environment.variables = {
