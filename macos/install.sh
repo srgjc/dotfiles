@@ -10,17 +10,11 @@ mkdir -p "$CONFIG_DIR"
 # Directories from dotfiles/config/ -> ~/.config/
 CONFIG_FOLDERS=(
   "aerospace"
-  "fastfetch"
-  "ghostty"
-  "starship"
 )
 
 # Files from dotfiles/home/ -> ~/
 HOME_FILES=(
   "Brewfile"
-  "vimrc"
-  "zshrc"
-  "gitconfig"
   "homebrew"
 )
 
