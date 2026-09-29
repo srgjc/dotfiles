@@ -2,4 +2,6 @@ font-family = Lilex
 font-size = 14
 font-thicken
 quit-after-last-window-closed = true
-theme = dark:TokyoNight,light:TokyoNight Day
+background-opacity = 0.85
+background-blur = true
+theme = dark:IR Black,light:TokyoNight Day
