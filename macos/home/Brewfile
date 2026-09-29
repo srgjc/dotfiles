@@ -28,6 +28,7 @@ cask "zen"
 cask "notion"
 cask "mullvad-vpn"
 cask "transmission"
+cask "bitwarden"
 
 # Mac App Store apps
 mas "GarageBand", id: 682658836
