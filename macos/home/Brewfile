@@ -20,14 +20,14 @@ cask "ghostty"
 cask "obsidian"
 cask "vlc"
 cask "signal"
-cask "whatsapp"
 cask "intellij-idea"
-cask "brave-browser"
 cask "docker-desktop"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-lilex"
+cask "zen"
 cask "notion"
 cask "mullvad-vpn"
+cask "transmission"
 
 # Mac App Store apps
 mas "GarageBand", id: 682658836
