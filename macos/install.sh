@@ -15,7 +15,6 @@ CONFIG_FOLDERS=(
 # Files from dotfiles/home/ -> ~/
 HOME_FILES=(
   "Brewfile"
-  "homebrew"
 )
 
 link_item() {
